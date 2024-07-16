@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-21T17:53:06.203810" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Orange" source="C:\Users\Proprietario\CursoRobot\RobotFramework\Automacao_Web\testes-web-automatizados\tests\login_orange.robot">
+<test id="s1-t1" name="Cenário 01: Realizar Login com usuario e senha válidos" line="9">
+<kw name="Iniciação do teste" owner="hooks" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:06.644920" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2024-05-21T17:53:07.332818" level="WARN">The chromedriver version (123.0.6312.122) detected in PATH at C:\Users\Proprietario\Documents\drivers\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.208); currently, chromedriver 124.0.6367.207 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-21T17:53:06.644920" elapsed="2.633906"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-21T17:53:09.280809" elapsed="0.142092"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:09.423901" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>url=${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-21T17:53:09.422901" elapsed="3.282335"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:06.644920" elapsed="6.060316"/>
+</kw>
+<kw name="Dado que estou na tela de login do site OrangeHRM" owner="login_orange_steps">
+<kw name="Validar tela de login" owner="login_orange_pages">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:12.719220" level="INFO">Page title is 'OrangeHRM'.</msg>
+<arg>title=${TITLE_LOGIN_PAGE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-05-21T17:53:12.705236" elapsed="0.013984"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${ORANGE_LOGO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-21T17:53:12.720220" elapsed="0.792683"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:12.705236" elapsed="0.807667"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:12.705236" elapsed="0.807667"/>
+</kw>
+<kw name="E preencho o username e senha" owner="login_orange_steps">
+<kw name="Preencher usenamer e senha" owner="login_orange_pages">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:13.512903" level="INFO">Typing text '$USERNAME_LOGIN' into text field 'name=username'.</msg>
+<arg>locator=${USERNAME_FIELD}</arg>
+<arg>text=${USERNAME_LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-21T17:53:13.512903" elapsed="0.303381"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:13.817283" level="INFO">Typing text '$PASSWORD_LOGIN' into text field 'name=password'.</msg>
+<arg>locator=${PASSWORD_FIELD}</arg>
+<arg>text=${PASSWORD_LOGIN}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-21T17:53:13.816284" elapsed="0.174588"/>
+</kw>
+<arg>$USERNAME_LOGIN</arg>
+<arg>$PASSWORD_LOGIN</arg>
+<status status="PASS" start="2024-05-21T17:53:13.512903" elapsed="0.477969"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:13.512903" elapsed="0.477969"/>
+</kw>
+<kw name="Quando clico no botão login" owner="login_orange_steps">
+<kw name="Clicar no botão login" owner="login_orange_pages">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:13.995457" level="INFO">Clicking element 'xpath=//button[@type='submit']'.</msg>
+<arg>locator=${BTN_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-21T17:53:13.994456" elapsed="1.399239"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:13.994456" elapsed="1.399239"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:13.990872" elapsed="1.403893"/>
+</kw>
+<kw name="finalização do teste" owner="hooks" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-05-21T17:53:15.512690" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-05-21T17:53:15.396391" elapsed="0.116299"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-21T17:53:15.512690" elapsed="2.489856"/>
+</kw>
+<status status="PASS" start="2024-05-21T17:53:15.395369" elapsed="2.607177"/>
+</kw>
+<doc>Teste para login positivo</doc>
+<tag>login</tag>
+<status status="PASS" start="2024-05-21T17:53:06.644920" elapsed="11.357626"/>
+</test>
+<doc>Esta suite tem como finalidade realizar testes de login no site https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</doc>
+<status status="PASS" start="2024-05-21T17:53:06.203810" elapsed="11.798736"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">login</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login Orange">Login Orange</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-21T17:53:07.332818" level="WARN">The chromedriver version (123.0.6312.122) detected in PATH at C:\Users\Proprietario\Documents\drivers\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.208); currently, chromedriver 124.0.6367.207 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
